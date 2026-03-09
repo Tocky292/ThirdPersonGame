@@ -43,7 +43,7 @@ public class CharacerJump : MonoBehaviour
 
             yVelocity -= gravity * Time.deltaTime;
 
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.W) )
         {
            
             TryToJump();

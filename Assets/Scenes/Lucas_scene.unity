@@ -394,7 +394,7 @@ Transform:
   m_GameObject: {fileID: 1011723181}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -3}
+  m_LocalPosition: {x: 0, y: 0, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -866,9 +866,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacerJump
   jumpPower: 10
-  gravity: 9.8
+  gravity: 15
   JumpsPerformed: 0
-  JumpsAllowed: 1
+  JumpsAllowed: 2
 --- !u!114 &1732379686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1538,7 +1538,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2098805934}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2a2e4c166b090f649b8361e9f6d46634, type: 3}
   m_Name: 
@@ -1547,9 +1547,13 @@ MonoBehaviour:
   playertransform: {fileID: 0}
   verticalrotationmin: -50
   verticalrotationmax: 80
+  cameratransform: {fileID: 0}
+  boomtransform: {fileID: 0}
+  camerayaw: 0
+  camerapitch: 0
+  camera: {fileID: 0}
   zoomideal: 10
   avoidlayer:
-    serializedVersion: 2
     m_Bits: 0
   zoomcurrent: 10
 --- !u!4 &2098805937
@@ -1561,7 +1565,7 @@ Transform:
   m_GameObject: {fileID: 2098805934}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.97, y: 2.61, z: -9}
+  m_LocalPosition: {x: 0, y: 1.41, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
