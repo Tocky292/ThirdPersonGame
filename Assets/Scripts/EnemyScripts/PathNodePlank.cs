@@ -11,6 +11,11 @@ public class PathNodePlank : PathNode
         plank.SetActive(false);
     }
 
+    public override void OnArrived()
+    {
+        PlacePlank();
+    }
+
     public void PlacePlank()
     {
         plank.SetActive(true);

@@ -17,39 +17,44 @@ public class FollowPath : MonoBehaviour
 
     private PathNode targetNode;
 
+    private int dirToTarget = 1;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         index = startingNode;
         targetNode = pathToFollow.GetNode(index);
         transform.position = targetNode.GetPos();
-        }
+    }
 
     // Update is called once per frame
     void Update()
     {   
-
+        //if (targetTransform.position.x <= transform.position.x)
+        //{
+        //    print(targetTransform.position.x >= transform.position.x);
+        //    GetNextTarget();
+        //}
         if (Vector3.Distance(transform.position, targetNode.GetPos()) < minDistance)
         {
-             transform.position = targetNode.GetPos();
-             GetNextTarget();
+            transform.position = targetNode.GetPos();
+            targetNode.OnArrived();
+            GetNextTarget();
         }
         else
         {
             transform.position += direction * targetNode.speed * Time.deltaTime;
         }
+
+        if (targetTransform)
+        {
+            dirToTarget = (targetTransform.position.x >= transform.position.x) ? 1 : -1;
+        }
     }
 
     void GetNextTarget()
     {
-        if ( targetTransform )
-        {
-            index += ( targetTransform.position.x >= transform.position.x ) ? 1 : -1;
-        }
-        else 
-        {
-            index++;
-        }
+        index += 1 * dirToTarget;
 
         if (index >= pathToFollow.pathNodes.Length-1)
         {
@@ -59,6 +64,11 @@ public class FollowPath : MonoBehaviour
         targetNode = pathToFollow.GetNode(index);
 
         ChangeDirection();
+    }
+
+    void CheckDirection()
+    {
+
     }
 
     void ChangeDirection()
