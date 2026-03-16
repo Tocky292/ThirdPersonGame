@@ -41,7 +41,13 @@
   <Project Path="Unity.VisualScripting.State.csproj" />
   <Project Path="Unity.AI.Navigation.Updater.csproj" />
   <Project Path="UnityEditor.UI.csproj" />
+<<<<<<< Updated upstream
   <Project Path="Unity.AI.Navigation.Editor.csproj" />
+=======
+  <Project Path="Unity.2D.Sprite.Editor.csproj" />
+  <Project Path="Unity.AI.Navigation.Editor.csproj" />
+  <Project Path="Assembly-CSharp.csproj" />
+>>>>>>> Stashed changes
   <Project Path="Unity.Multiplayer.Center.Common.csproj" />
   <Project Path="Unity.ProBuilder.KdTree.csproj" />
   <Project Path="Unity.ProBuilder.AddOns.Editor.csproj" />
@@ -53,16 +59,28 @@
   <Project Path="Assembly-CSharp-Editor.csproj" />
   <Project Path="Unity.ProBuilder.AssetIdRemapUtility.csproj" />
   <Project Path="Unity.Settings.Editor.csproj" />
+<<<<<<< Updated upstream
   <Project Path="Unity.InputSystem.TestFramework.csproj" />
   <Project Path="Unity.CollabProxy.Editor.csproj" />
   <Project Path="Unity.ShaderGraph.Utilities.csproj" />
   <Project Path="Unity.VisualScripting.Shared.Editor.csproj" />
   <Project Path="Unity.RenderPipeline.Universal.ShaderLibrary.csproj" />
   <Project Path="Assembly-CSharp.csproj" />
+=======
+  <Project Path="Unity.CollabProxy.Editor.csproj" />
+  <Project Path="Unity.InputSystem.TestFramework.csproj" />
+  <Project Path="Unity.ShaderGraph.Utilities.csproj" />
+  <Project Path="Unity.VisualScripting.Shared.Editor.csproj" />
+  <Project Path="Unity.RenderPipeline.Universal.ShaderLibrary.csproj" />
+>>>>>>> Stashed changes
   <Project Path="Unity.Rendering.LightTransport.Editor.csproj" />
   <Project Path="Unity.InputSystem.DocCodeSamples.csproj" />
   <Project Path="Unity.RenderPipelines.Universal.Shaders.csproj" />
   <Project Path="Unity.RenderPipelines.Core.Runtime.Shared.csproj" />
+<<<<<<< Updated upstream
+=======
+  <Project Path="Unity.2D.Sprite.AIIntegration.Editor.csproj" />
+>>>>>>> Stashed changes
   <Project Path="Unity.ProBuilder.Stl.csproj" />
   <Project Path="Unity.VisualScripting.DocCodeExamples.csproj" />
   <Project Path="Unity.PlasticSCM.Editor.Entities.csproj" />
