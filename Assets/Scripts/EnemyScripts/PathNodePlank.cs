@@ -1,0 +1,27 @@
+using UnityEngine;
+
+public class PathNodePlank : PathNode
+{
+    private GameObject plank;
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        plank = transform.GetChild(0).gameObject;
+        plank.SetActive(false);
+    }
+
+    public override void OnArrived(int dirToTarget)
+    {
+        // added code so plank is only activated if enemy goes over it
+        if (dirToTarget == 1)
+        {
+            PlacePlank();
+        }
+    }
+
+    public void PlacePlank()
+    {
+        plank.SetActive(true);
+    }
+}
