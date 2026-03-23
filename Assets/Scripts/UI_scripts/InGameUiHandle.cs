@@ -47,33 +47,4 @@ public class InGameUiHandler : MonoBehaviour
 
         
     }
-
-    public void SetHealth(int amount)
-    {
-        if (amount == 3)
-        {
-            heart1.sprite = FullHeartImage;
-            heart2.sprite = FullHeartImage;
-            heart3.sprite = FullHeartImage;
-        }
-        if (amount == 2)
-        {
-            heart1.sprite = FullHeartImage;
-            heart2.sprite = FullHeartImage;
-            heart3.sprite = EmptyHeartImage;
-        }
-        if (amount == 1)
-        {
-            heart1.sprite = FullHeartImage;
-            heart2.sprite = EmptyHeartImage;
-            heart3.sprite = EmptyHeartImage;
-        }
-        if (amount == 0)
-        {
-            heart1.sprite = EmptyHeartImage;
-            heart2.sprite = EmptyHeartImage;
-            heart3.sprite = EmptyHeartImage;
-        }
-        
-    }
 }
