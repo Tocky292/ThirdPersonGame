@@ -30,11 +30,6 @@ public class FollowPath : MonoBehaviour
     // Update is called once per frame
     void Update()
     {   
-        //if (targetTransform.position.x <= transform.position.x)
-        //{
-        //    print(targetTransform.position.x >= transform.position.x);
-        //    GetNextTarget();
-        //}
         if (Vector3.Distance(transform.position, targetNode.GetPos()) < minDistance)
         {
             transform.position = targetNode.GetPos();

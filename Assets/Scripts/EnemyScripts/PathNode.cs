@@ -6,6 +6,8 @@ public class PathNode : MonoBehaviour
 
     public Vector3 offset;
 
+    public float delay = 0;
+
     public Vector3 GetPos()
     {
         return transform.position + offset;
