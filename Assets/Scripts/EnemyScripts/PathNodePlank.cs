@@ -11,9 +11,13 @@ public class PathNodePlank : PathNode
         plank.SetActive(false);
     }
 
-    public override void OnArrived()
+    public override void OnArrived(int dirToTarget)
     {
-        PlacePlank();
+        // added code so plank is only activated if enemy goes over it
+        if (dirToTarget == 1)
+        {
+            PlacePlank();
+        }
     }
 
     public void PlacePlank()

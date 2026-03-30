@@ -11,7 +11,7 @@ public class PathNode : MonoBehaviour
         return transform.position + offset;
     }
 
-    public virtual void OnArrived()
+    public virtual void OnArrived(int dirToTarget)
     {
         
     }

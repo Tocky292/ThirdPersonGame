@@ -2,13 +2,24 @@ using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class ObjectColider : MonoBehaviour
 {
-   
+
+    public InGameUiHandler UiHandler;
+
+    public GameManager GameManager;
+
+
+
+    
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        
+        
+
        
     }
 
@@ -27,23 +38,38 @@ public class ObjectColider : MonoBehaviour
         if(other.CompareTag("Coin"))
         {
             print("Touched Coin"); 
+
+            // destory the coin 
             Destroy(other.gameObject);
+
+            // add one to the ui counter
+            InGameUiHandler script = GameObject.Find("InGameUIHandler").GetComponent<InGameUiHandler>();
+            script.IncreaseCoins();
         }
 
 
         // what to do if you touch a static hazard
         if (other.CompareTag("Hazard"))
         {
-            print("Touched a static harzard");
-            SceneManager.LoadScene("Lucas_scene");
+
+            resetScence();
+ 
         }
 
-        // what to do if you touch a moveing hazard
-        if (other.CompareTag("Hazard"))
-        {
-            print("Touched a dynamic harzard");
-            SceneManager.LoadScene("Lucas_scene");
-        }
+
+
+
+    }
+
+    public void resetScence()
+    {
+        GameManager script = GameObject.Find("GameManagerObject").GetComponent<GameManager>();
+        script.Removehealth();
+        
+
+
+        print("resetting scence");
+        SceneManager.LoadScene("Final_Scene");
 
     }
 
