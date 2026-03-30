@@ -1,5 +1,6 @@
 using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
 
@@ -10,10 +11,12 @@ public class ObjectColider : MonoBehaviour
 
     public GameManager GameManager;
 
+    public AudioSource audioSource;
 
 
-    
-    
+
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -45,6 +48,11 @@ public class ObjectColider : MonoBehaviour
             // add one to the ui counter
             InGameUiHandler script = GameObject.Find("InGameUIHandler").GetComponent<InGameUiHandler>();
             script.IncreaseCoins();
+
+            audioSource = GetComponent<AudioSource>();
+
+            audioSource.Play();
+
         }
 
 
