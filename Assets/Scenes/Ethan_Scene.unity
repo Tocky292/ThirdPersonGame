@@ -1340,6 +1340,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PathNodePlank
       objectReference: {fileID: 0}
+    - target: {fileID: 5724016427114169997, guid: 17bff0a4dd5a1df52960319c7419624d, type: 3}
+      propertyPath: delay
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7572284503727698018, guid: 17bff0a4dd5a1df52960319c7419624d, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
