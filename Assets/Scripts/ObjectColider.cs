@@ -6,9 +6,10 @@ using UnityEngine.SceneManagement;
 public class ObjectColider : MonoBehaviour
 {
 
-    public GameObject UiHandler;
+    public InGameUiHandler UiHandler;
 
     public GameManager GameManager;
+
 
 
     
@@ -37,7 +38,13 @@ public class ObjectColider : MonoBehaviour
         if(other.CompareTag("Coin"))
         {
             print("Touched Coin"); 
+
+            // destory the coin 
             Destroy(other.gameObject);
+
+            // add one to the ui counter
+            InGameUiHandler script = GameObject.Find("InGameUIHandler").GetComponent<InGameUiHandler>();
+            script.IncreaseCoins();
         }
 
 
@@ -62,7 +69,7 @@ public class ObjectColider : MonoBehaviour
 
 
         print("resetting scence");
-        SceneManager.LoadScene("Ethan_scene");
+        SceneManager.LoadScene("Final_Scene");
 
     }
 

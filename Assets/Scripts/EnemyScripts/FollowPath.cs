@@ -42,6 +42,7 @@ public class FollowPath : MonoBehaviour
             // pass dirToTarget to pathNodePlank so that it can choose to create the plank
             targetNode.OnArrived(dirToTarget);
             GetNextTarget();
+            ChangeRotation();
         }
         else
         {
@@ -51,6 +52,7 @@ public class FollowPath : MonoBehaviour
         if (targetTransform)
         {
             dirToTarget = (targetTransform.position.x >= transform.position.x) ? 1 : -1;
+
         }
     }
 
@@ -66,6 +68,8 @@ public class FollowPath : MonoBehaviour
         targetNode = pathToFollow.GetNode(index);
 
         ChangeDirection();
+
+
     }
 
     void CheckDirection()
@@ -77,5 +81,17 @@ public class FollowPath : MonoBehaviour
     {
         direction = targetNode.GetPos() - transform.position;
         direction.Normalize();
+    }
+
+    void ChangeRotation()
+    {
+        if (dirToTarget < 0)
+        {
+            transform.rotation = Quaternion.Euler(0, 180, 0);
+        }
+        if (dirToTarget > 0)
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
     }
 }

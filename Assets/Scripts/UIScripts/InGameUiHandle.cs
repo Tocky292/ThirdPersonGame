@@ -12,6 +12,8 @@ public class InGameUiHandler : MonoBehaviour
     public Sprite FullHeartImage;
 
     public Sprite EmptyHeartImage;
+
+    private int coinamount = 0;
     
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -74,4 +76,12 @@ public class InGameUiHandler : MonoBehaviour
         }
         
     }
+
+
+    public void IncreaseCoins()
+    {
+        coinamount++;
+        print(coinamount);
+    }
+
 }
