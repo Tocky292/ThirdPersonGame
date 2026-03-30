@@ -1,6 +1,7 @@
-using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class InGameUiHandler : MonoBehaviour
 {
@@ -17,6 +18,12 @@ public class InGameUiHandler : MonoBehaviour
     public TMP_Text textelement;
 
     private int coinamount = 0;
+
+    public GameObject ingameui;
+
+    public GameObject gameover;
+
+    public GameObject gamewin;
 
 
     public void SetHealth(int amount)
@@ -57,6 +64,30 @@ public class InGameUiHandler : MonoBehaviour
 
 
 
+    }
+
+
+
+
+    public void GoToGameover()
+    {
+        print("gotogameover function ran");
+        ingameui.SetActive(false);
+        gameover.SetActive(true);
+        gamewin.SetActive(false);
+    }
+
+    public void GoToGamewin()
+    {
+        ingameui.SetActive(false);
+        gameover.SetActive(false);
+        gamewin.SetActive(true);
+    }
+
+    public void GoToMainMenu()
+    {
+        print("main menu btn pressed");
+        SceneManager.LoadScene("UI_Scene");
     }
 
 }
