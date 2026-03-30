@@ -1469,8 +1469,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f5a14542d46ea24f904e227be6c749c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjectCollection
-  UiHandler: {fileID: 1184622354}
-  GameManager: {fileID: 1332886447}
+  UiHandler: {fileID: 0}
+  GameManager: {fileID: 0}
 --- !u!114 &664335595
 MonoBehaviour:
   m_ObjectHideFlags: 0
