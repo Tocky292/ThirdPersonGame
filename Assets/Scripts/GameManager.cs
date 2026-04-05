@@ -1,17 +1,13 @@
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     
     public static GameManager instance;
 
-    public InGameUiHandler UiHandler;
-
     public int health = 3;
 
-    private bool gameoverscreenactive;
 
     // really just for coin and death sound
     private AudioSource audioSource;
@@ -38,13 +34,18 @@ public class GameManager : MonoBehaviour
 
     }
 
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+
+        
+    }
+
     // Update is called once per frame
     void Update()
     {
-        // updates the health ui so that it shows after youve died
         updateUI();
-
-
     }
 
 
