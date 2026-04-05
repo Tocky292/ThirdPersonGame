@@ -16,11 +16,14 @@ public class CharacterMove : MonoBehaviour
     private Vector3 movement = new Vector3();
 
     public Transform cameratransform; 
+
+    private Animator playerAnim;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        playerAnim = GetComponentInChildren<Animator>();
         //Cursor.lockState = CursorLockMode.Locked;
     }
 
@@ -51,6 +54,11 @@ public class CharacterMove : MonoBehaviour
         }
 
         controller.Move(movement * Time.deltaTime);
-    }
 
+        if (inputsThisFrame != Vector2.zero) playerAnim.SetBool("IsWalking", true);
+        else playerAnim.SetBool("IsWalking", false);
+
+        if (inputsThisFrame.x < 0) transform.GetChild(0).transform.rotation = Quaternion.Euler(0,-90,0);
+        else if (inputsThisFrame.x > 0) transform.GetChild(0).transform.rotation = Quaternion.Euler(0,90,0);
+    }
 }
