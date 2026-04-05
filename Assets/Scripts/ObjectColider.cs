@@ -42,22 +42,31 @@ public class ObjectColider : MonoBehaviour
         {
             print("Touched Coin"); 
 
+
+
             // destory the coin 
             Destroy(other.gameObject);
+
+
+            GameManager script1 = GameObject.Find("GameManagerObject").GetComponent<GameManager>();
+            script1.PlayCoinSound();
 
             // add one to the coin ui counter
             InGameUiHandler script = GameObject.Find("InGameUIHandler").GetComponent<InGameUiHandler>();
             script.IncreaseCoins();
 
-            audioSource = GetComponent<AudioSource>();
 
-            audioSource.Play();
 
         }
 
         if (other.CompareTag("WinChest"))
         {
             print("win chest touch");
+
+            // play sound before you destory it
+            audioSource = other.GetComponentInParent<AudioSource>();
+
+            audioSource.Play();
 
             GameManager script1 = GameObject.Find("GameManagerObject").GetComponent<GameManager>();
             script1.ResetHealth();
@@ -66,7 +75,7 @@ public class ObjectColider : MonoBehaviour
             script.GoToGamewin();
 
 
-
+            
         }
 
 

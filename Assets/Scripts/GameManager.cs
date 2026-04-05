@@ -11,9 +11,10 @@ public class GameManager : MonoBehaviour
 
     public int health = 3;
 
-    private bool gameoverscreenactive;
 
-    private bool gamewinscreenactive;
+    // really just for coin and death sound
+    public AudioSource audioSource;
+    public AudioClip[] clips;
 
 
 
@@ -64,6 +65,22 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene("Final_Scene");
         }
 
+
+        //play the second clip e.g. death sound
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = clips[1];
+        audioSource.Play();
+
+
+    }
+
+    public void PlayCoinSound()
+    {
+
+        //play the first clip e.g. coind sound
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = clips[0];
+        audioSource.Play();
     }
 
 
