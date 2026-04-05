@@ -6,7 +6,6 @@ TagManager:
   tags:
   - Coin
   - Hazard
-  - WinChest
   layers:
   - Default
   - TransparentFX

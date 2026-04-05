@@ -15,12 +15,15 @@ public class CharacterMove : MonoBehaviour
 
     private Vector3 movement = new Vector3();
 
+    private Animator playerAnim;
+
     public Transform cameratransform; 
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        playerAnim = GetComponentInChildren<Animator>();
         //Cursor.lockState = CursorLockMode.Locked;
     }
 
@@ -49,6 +52,9 @@ public class CharacterMove : MonoBehaviour
         {
             movement *= speedWalk;
         }
+
+        if (inputsThisFrame != Vector2.zero) playerAnim.SetBool("IsWalking", true);
+        else playerAnim.SetBool("IsWalking", false);
 
         controller.Move(movement * Time.deltaTime);
     }
