@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class CharacerJump : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class CharacerJump : MonoBehaviour
     private float yVelocity;
 
     private CharacterController controller;
+
+    public AudioSource audioSource;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -62,6 +65,17 @@ public class CharacerJump : MonoBehaviour
 
             JumpsPerformed += 1;
         }
+
+
+        // plays the double jump sound effect is jumps greater than 0
+
+        if (JumpsPerformed > 1)
+        {
+            audioSource = GetComponent<AudioSource>();
+
+            audioSource.Play();
+        }
+
     }
 
     public void ResetJumps()

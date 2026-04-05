@@ -3,7 +3,11 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuUIHandler : MonoBehaviour
 {
+    public GameObject mainmenu;
 
+    public GameObject gameover;
+
+    public GameObject gamewin;
 
 
     public void StartGame()
@@ -16,4 +20,6 @@ public class MainMenuUIHandler : MonoBehaviour
     {
         print("Quit the game");
     }
+
+
 }
