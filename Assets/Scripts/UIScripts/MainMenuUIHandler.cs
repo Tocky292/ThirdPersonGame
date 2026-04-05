@@ -19,6 +19,7 @@ public class MainMenuUIHandler : MonoBehaviour
     public void QuitGame()
     {
         print("Quit the game");
+        Application.Quit();
     }
 
 

@@ -19,18 +19,30 @@ public class CharacerJump : MonoBehaviour
 
     public AudioSource audioSource;
 
+
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         controller = GetComponent<CharacterController>();
+
+        //Debug.developerConsoleVisible = true;
+
     }
+
 
     // Update is called once per frame
     void Update()
     {
 
         // we move first before the jump to force an update on the isgrounded state
+
        controller.Move(Vector3.up * yVelocity * Time.deltaTime);
+
+        //print(controller.isGrounded);
+
+        //Debug.LogError(controller.isGrounded);  
 
         if (controller.isGrounded)
         {
