@@ -9,11 +9,16 @@ public class GameManager : MonoBehaviour
     public int health = 3;
 
 
+    // really just for coin and death sound
+    private AudioSource audioSource;
+    public AudioClip[] clips;
 
 
 
     void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
+
         // Check if an instance already exists
         if (instance == null)
         {
@@ -46,11 +51,42 @@ public class GameManager : MonoBehaviour
 
     public void Removehealth()
     {
-        print("removed a health");
+        if (GameObject.Find("GameoverUI") != null || GameObject.Find("WinUI") != null)
+        {
+            return;
+        }
+        
+        //print("removed a health");
         health --;
 
         updateUI();
 
+        if (health < 1)
+        {
+            print("heath is 0 showing gameover");
+            InGameUiHandler script = GameObject.Find("InGameUIHandler").GetComponent<InGameUiHandler>();
+            script.GoToGameover();
+            ResetHealth();
+        }
+        else
+        {
+            SceneManager.LoadScene("Final_Scene");
+        }
+
+
+        //play the second clip e.g. death sound
+        audioSource.clip = clips[1];
+        audioSource.Play();
+
+
+    }
+
+    public void PlayCoinSound()
+    {
+
+        //play the first clip e.g. coind sound
+        audioSource.clip = clips[0];
+        audioSource.Play();
     }
 
 
@@ -62,7 +98,10 @@ public class GameManager : MonoBehaviour
 
     public void updateUI()
     {
-        InGameUiHandler script = GameObject.Find("InGameUIHandler").GetComponent<InGameUiHandler>();
-        script.SetHealth(health);
+        if (GameObject.Find("InGameUIHandler") != null)
+        {
+            InGameUiHandler script = GameObject.Find("InGameUIHandler").GetComponent<InGameUiHandler>();
+            script.SetHealth(health);
+        }
     }
 }
